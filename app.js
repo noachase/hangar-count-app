@@ -1,9 +1,8 @@
-
-
 const spanArea = document.querySelector('.res-area')
 const spanFermLength = document.querySelector('.res-ferm-length')
 const spanFermCount = document.querySelector('.res-ferm-count')
 const spanPipeCount = document.querySelector('.res-ferm-pipe-count')
+const spanPipeSnakeCount = document.querySelector('.res-ferm-snake-pipe-count')
 
 const btn = document.querySelector('.button')
 
@@ -11,15 +10,21 @@ const count = () => {
   const width = document.getElementById('floatWidth').value
   const length = document.getElementById('floatLength').value
   const angle = document.getElementById('floatAngle').value
-  const area = +width * +length
 
-  const hangarRise = ((+width / 2) * getTanDeg(+angle))
-  const fermLen = (hangarRise / getSinDeg(angle)).toFixed(2)
+  const getFermLength = () => {
+    const hangarRise = ((+width / 2) * getTanDeg(angle))
+    const fermLen = (hangarRise / getSinDeg(angle)).toFixed(2)
+    const totalLength = ((fermLen * 2 + 2) + ((fermLen * 2 + 2) * .1)).toFixed(1)
 
+    spanPipeCount.textContent = totalLength + ' м'
+    spanFermLength.textContent = fermLen + ' м'
+    spanPipeSnakeCount.textContent = totalLength + ' м'
+  }
 
-
-  spanArea.textContent = area + ' м.кв'
-  spanFermLength.textContent = fermLen + ' м'
+  const getArea = () => {
+    const area = +width * +length
+    spanArea.textContent = area + ' м.кв'
+  }
 
   const getFermCount = length => {
     let sectionCountStd = Math.ceil(length / 3)
@@ -49,6 +54,8 @@ const count = () => {
     return Math.sin(rad);
   }
 
+  getArea()
+  getFermLength()
   getPipeLength()
   getFermCount(length)
 }
