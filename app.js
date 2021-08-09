@@ -28,9 +28,7 @@ const count = () => {
 
   const getFermCount = length => {
     let sectionCountStd = Math.ceil(length / 3)
-    console.log("🚀 ~ file: app.js ~ line 25 ~ count ~ sectionCountStd", sectionCountStd)
     const lengthRemainder = length % 3
-    console.log("🚀 ~ file: app.js ~ line 27 ~ count ~ lengthRemainder", lengthRemainder)
 
     if (lengthRemainder === 0) {
       spanFermCount.textContent = sectionCountStd + 1 + ' шт'
