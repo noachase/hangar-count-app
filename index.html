@@ -67,21 +67,21 @@
         <div class="container-fluid">
 
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatWidth" placeholder="Введите ширину ангара">
+            <input required type="text" class="form-control" id="floatWidth" placeholder="Введите ширину ангара">
             <label for="floatWidth">Ширина в м</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatLength" placeholder="Введите длину ангара">
+            <input required type="text" class="form-control" id="floatLength" placeholder="Введите длину ангара">
             <label for="floatLength">Длина в м</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatHeight" placeholder="Введите высоту ангара">
+            <input required type="text" class="form-control" id="floatHeight" placeholder="Введите высоту ангара">
             <label for="floatHeight">Высота под ферму в м</label>
           </div>
-          <div class="form-floating mb-3">
+          <!-- <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatAngle" placeholder="Введите угол наклона кровли">
             <label for="floatAngle">Угол наклона кровли в градусах</label>
-          </div>
+          </div> -->
           <button type="button" class="btn btn-lg btn-outline-light button" data-bs-toggle="modal"
             data-bs-target="#exampleModal">РАССЧИТАТЬ</button>
 
@@ -115,6 +115,18 @@
                     <div class="modal-body">
                       <div class="d-flex justify-content-between hangar">
                         <div class="area text-dark text-start">
+                          Ширина ангара:
+                        </div>
+                        <span class="area-text text-dark res-hangar-width"></span>
+                      </div>
+                      <div class="d-flex justify-content-between hangar">
+                        <div class="area text-dark text-start">
+                          Длина ангара:
+                        </div>
+                        <span class="area-text text-dark res-hangar-length"></span>
+                      </div>
+                      <div class="d-flex justify-content-between hangar">
+                        <div class="area text-dark text-start">
                           Площадь ангара:
                         </div>
                         <span class="area-text text-dark res-area"></span>
@@ -131,7 +143,7 @@
                         </div>
                         <span class="area-text text-dark res-ferm-count"></span>
                       </div>
-                      <div class="d-flex justify-content-between hangar">
+                      <!-- <div class="d-flex justify-content-between hangar">
                         <div class="area text-dark text-start">
                           Кол-во трубы для поясов 1 фермы, в м:
                         </div>
@@ -154,7 +166,7 @@
                           Кол-во трубы для прогонов кровельных, в м:
                         </div>
                         <span class="area-text text-dark res-ferm-snake-pipe-count"></span>
-                      </div>
+                      </div> -->
                     </div>
 
                     <!-- TABLE ==========================================================-->
@@ -174,9 +186,14 @@
                           <td class='td-m-pillars'>Otto</td>
                         </tr>
                         <tr>
-                          <th scope="row">Прогоны</th>
-                          <td class='td-pcs-joists'></td>
-                          <td class='td-m-joists'>м</td>
+                          <th scope="row">Прогоны стены</th>
+                          <td class='td-pcs-joists-walls'></td>
+                          <td class='td-m-joists-walls'>м</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Прогоны крыша</th>
+                          <td class='td-pcs-joists-ceiling'></td>
+                          <td class='td-m-joists-ceiling'>м</td>
                         </tr>
                         <tr>
                           <th scope="row">Фермы</th>
@@ -184,7 +201,7 @@
                           <td class='td-m-girders'>м</td>
                         </tr>
                         <tr>
-                          <th scope="row">Розкосы</th>
+                          <th scope="row">Раскосы</th>
                           <td class='td-pcs-braces'></td>
                           <td class='td-m-braces'>м</td>
                         </tr>
