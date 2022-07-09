@@ -50,9 +50,7 @@ const count = (e) => {
   const fermRise = width <= 19 ? 3.2 : 3.5
   console.log("🚀 ~ file: app.js ~ line 45 ~ count ~ fermRise", fermRise)
   const fermLen = (Math.sqrt((fermRise ** 2) + (width / 2) ** 2)).toFixed(2) //длина 1 половинки фермы
-  // const fermLen = getPifagorGypotenuse(fermRise, width / 2, 2) + ` м`
   console.log("🚀 ~ file: app.js ~ line 47 ~ count ~ fermLen", fermLen)
-  // console.log("🚀 ~ file: app.js ~ line 42 ~ count ~ fermL1", fermL1)
 
   if (!(width && length && height)) return
 
@@ -115,7 +113,7 @@ const count = (e) => {
 
     //! TODO посчитать доп стойки для фронтонов
     // const distanceFromGatesToEdge = (width - gatesWidth) / 2
-    const frontonPillarsCount =( Math.floor(width / 4)) * 2
+    const frontonPillarsCount =(Math.floor(width / 4)) * 2
 
     // if (distanceFromGatesToEdge >= 4) { //кол-во столбов в одном фронтоне из учета наличия ворот
     //   frontonPillarsCount = 4
@@ -126,7 +124,7 @@ const count = (e) => {
     // } else {
     //   frontonPillarsCount = 0
     // }
-    const frontonPillarsLength = frontonPillarsCount * 8 // 1 столб торцевой = 8м
+    const frontonPillarsLength = frontonPillarsCount * 7 // 1 столб торцевой = 7м
     const sectionCountStd = Math.ceil(length / 3)
     const lengthRemainder = length % 3
     let innerPcs, innerM = null
@@ -223,7 +221,7 @@ const count = (e) => {
   getProgCeilingCount(length)
 }
 
-inputForm.addEventListener('input', event => {
+const validateFunction = event => {
   const target = event.target;
   if (!target.value.match(/[0-9_]/g)) {
     target.value = target.value.replace(/[A-Za-zА-Яа-яёЁ]/g, '');
@@ -231,6 +229,7 @@ inputForm.addEventListener('input', event => {
   if (target.matches('select') || target.matches('input')) {
     target.value = target.value.replace(/[A-Za-zА-Яа-яёЁ]/g, '');
   }
-});
+}
 
+inputForm.addEventListener('input', validateFunction);
 btn.addEventListener('click', count)
