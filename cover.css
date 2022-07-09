@@ -11,9 +11,6 @@
   text-shadow: none; /* Prevent inheritance from `body` */
 }
 
-::placeholder {
-  /* color: black !important; */
-}
 label {
   color: black !important;
 }
@@ -43,6 +40,10 @@ body {
   color: rgba(255, 255, 255, .5);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
+}
+
+.form-control {
+  outline: solid;
 }
 
 .nav-masthead .nav-link:hover,
