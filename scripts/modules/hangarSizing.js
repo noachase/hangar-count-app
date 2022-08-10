@@ -18,17 +18,23 @@ export const getFermCount = (length, fermLen) => {
   const sectionCountStd = Math.ceil(length / 3); // кол-во секций в ангаре
   const lengthRemainder = length % 3; // остаток от длинны 3х метровой секции
 
-  let fermCol, fermColTd, sectionCol, rosPipeLength, pipeLen = null;
+  let fermCol = null;
+  let fermColTd = null;
+  let sectionCol = null;
+  let rosPipeLength = null;
+  let pipeLen = null;
   let sectionHintText = '';
 
-  if (lengthRemainder === 0) { // если длина ангара делится нацело, то это кол-во пролетов +1 начальный
+  // если длина ангара делится нацело, то это кол-во пролетов +1 начальный
+  if (lengthRemainder === 0) {
     fermCol = (sectionCountStd + 1) * 2;
     fermColTd = sectionCountStd + 1;
     sectionCol = sectionCountStd + 1;
     pipeLen = addTenPercent(+((sectionCol * 2 * fermLen)), 1);
     rosPipeLength = addTenPercent(Math.ceil(pipeLen * 1.5), 1);
     sectionHintText = ` шт`;
-  } else if (lengthRemainder !== 0 && lengthRemainder <= 1) { // если длина ангара не делится нацело, то остаток прибавляется к последнему пролету
+    // если длина ангара не делится нацело, то остаток прибавляется к последнему пролету
+  } else if (lengthRemainder !== 0 && lengthRemainder <= 1) {
     fermCol = sectionCountStd * 2;
     sectionCol = sectionCountStd;
     pipeLen = addTenPercent(+(fermCol * fermLen));
@@ -50,7 +56,6 @@ export const getFermCount = (length, fermLen) => {
 
   tdPcsRos.textContent = '---';
 };
-
 
 // площадь ангара
 export const getArea = (width, length) => {

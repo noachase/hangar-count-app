@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="">
   <title>Посчитать ангар</title>
 
@@ -83,8 +84,17 @@
               <input type="text" class="form-control" id="floatGatesWidth" placeholder="Введите угол наклона кровли">
               <label for="floatGatesWidth">Ширина ворот (фронтон) в м</label>
             </div>
-            <button type="submit" class="btn btn-lg btn-outline-light button" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">РАССЧИТАТЬ</button>
+            <div class="form-floating mb-3">
+              <select class="form-select form-select-lg pt-0 pb-0" aria-label=".form-select-lg">
+                <option selected>Шаг торцевых</option>
+                <option value="3">3 м</option>
+                <option value="4">4 м</option>
+              </select>
+              <button type="submit" class="btn btn-lg btn-outline-light button" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                РАССЧИТАТЬ
+              </button>
+            </div>
           </form>
 
           <!-- ====================================== Modal ========================================== -->
@@ -238,27 +248,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  <script>
-    (function () {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-
-          form.classList.add('was-validated')
-        }, false)
-      })
-    })()
-  </script>
 </body>
 
 </html>
