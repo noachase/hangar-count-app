@@ -4,6 +4,7 @@ const {
   tdMPillars,
   tdPcsPillarsFront,
   tdMPillarsFront,
+  selectMenu,
 } = selectors;
 
 // стойки
@@ -21,9 +22,13 @@ export const getColumnCount = (length, height, width) => {
   // } else {
   //   frontonPillarsCount = 0
   // }
+  
+  // Получение значения value из selectMenu
+  let capsStep = selectMenu.options[selectMenu.selectedIndex].value
+
   const frontonPillarsLength = frontonPillarsCount * 7; // 1 столб торцевой = 7м
-  const sectionCountStd = Math.ceil(length / 3);
-  const lengthRemainder = length % 3;
+  const sectionCountStd = Math.ceil(length / capsStep);
+  const lengthRemainder = length % capsStep;
   let innerPcs, innerM = null;
 
   if (lengthRemainder === 0) {

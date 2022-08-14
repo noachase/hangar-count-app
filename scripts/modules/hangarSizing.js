@@ -15,8 +15,12 @@ export const getFermLength = (fermLen) => {
 };
 
 export const getFermCount = (length, fermLen) => {
-  const sectionCountStd = Math.ceil(length / 3); // кол-во секций в ангаре
-  const lengthRemainder = length % 3; // остаток от длинны 3х метровой секции
+
+  // Получение значения value из selectMenu
+  let capsStep = selectMenu.options[selectMenu.selectedIndex].value
+  
+  const sectionCountStd = Math.ceil(length / capsStep); // кол-во секций в ангаре
+  const lengthRemainder = length % capsStep; // остаток от длинны 3х метровой секции
 
   let fermCol = null;
   let fermColTd = null;

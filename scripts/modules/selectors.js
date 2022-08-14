@@ -38,6 +38,8 @@ const inputWidth = document.getElementById('floatWidth');
 const inputLength = document.getElementById('floatLength');
 const inputHeight = document.getElementById('floatHeight');
 
+const selectMenu = document.getElementById('selectMenu');
+
 export default {
   spanArea,
   spanFermLength,
@@ -67,4 +69,5 @@ export default {
   inputWidth,
   inputLength,
   inputHeight,
+  selectMenu,
 };
