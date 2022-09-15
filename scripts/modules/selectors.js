@@ -38,6 +38,17 @@ const inputWidth = document.getElementById('floatWidth');
 const inputLength = document.getElementById('floatLength');
 const inputHeight = document.getElementById('floatHeight');
 
+// Всё для селектов
+
+const doorsText = document.querySelector('.select-doors-text');
+const doorsResult = document.querySelector('.select-doors-result');
+const stepText = document.querySelector('.select-step-text');
+const stepResult = document.querySelector('.select-step-result');
+const stepList = document.querySelector('.select-step-list');
+const doorsList = document.querySelector('.select-doors-list');
+const stepTriangle = document.querySelector('.select-step-toggle');
+const doorTriangle = document.querySelector('.select-doors-toggle');
+
 export default {
   spanArea,
   spanFermLength,
@@ -67,4 +78,12 @@ export default {
   inputWidth,
   inputLength,
   inputHeight,
+  doorsText,
+  doorsResult,
+  stepText,
+  stepResult,
+  stepList,
+  doorsList,
+  stepTriangle,
+  doorTriangle,
 };
