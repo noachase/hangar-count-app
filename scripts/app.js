@@ -1,3 +1,4 @@
+import './modules/selects.js';
 import {getColumnCount} from './modules/columns.js';
 import {getFermLength, getFermCount, getArea} from './modules/hangarSizing.js';
 import {getProgWallsCount, getProgCeilingCount} from './modules/progs.js';

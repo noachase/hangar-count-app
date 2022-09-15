@@ -11,6 +11,7 @@
 
   <!-- Bootstrap core CSS -->
   <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/index.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -85,16 +86,35 @@
               <label for="floatGatesWidth">Ширина ворот (фронтон) в м</label>
             </div>
             <div class="form-floating mb-3">
-              <select class="form-select form-select-lg pt-0 pb-0" aria-label=".form-select-lg">
-                <option selected>Шаг торцевых</option>
-                <option value="3">3 м</option>
-                <option value="4">4 м</option>
-              </select>
-              <button type="submit" class="btn btn-lg btn-outline-light button" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                РАССЧИТАТЬ
-              </button>
+              <div class="selects-wrapper">
+                <div class="select-step">
+                  <div class="form-control select-step-title">
+                    <p class="select-step-text">Шаг Торцевых</p>
+                    <p class="select-step-result"></p>
+                  </div>
+
+                  <ul class="form-control select-step-list">
+                    <li class="select-step-item">3 м</li>
+                    <li class="select-step-item">4 м</li>
+                  </ul>
+                </div>
+                <div class="select-doors">
+                  <div class="form-control select-doors-title">
+                      <p class="select-doors-text">Кол-во ворот 6х5</p>
+                      <p class="select-doors-result"></p>
+                  </div>
+
+                  <ul class="form-control select-doors-list">
+                    <li class="select-doors-item">1 шт</li>
+                    <li class="select-doors-item">2 шт</li>
+                  </ul>
+                </div>
+              </div>
             </div>
+            <button type="submit" class="btn btn-lg btn-outline-light button" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">
+              РАССЧИТАТЬ
+            </button>
           </form>
 
           <!-- ====================================== Modal ========================================== -->
