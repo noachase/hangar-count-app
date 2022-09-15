@@ -6,6 +6,8 @@ const {
   stepResult,
   stepList,
   doorsList,
+  stepTriangle,
+  doorTriangle,
 } = selectors;
 
 const selectsEvents = () => {
@@ -38,6 +40,18 @@ const selectsEvents = () => {
       doorsResult.textContent = target.textContent;
       doorsList.classList.remove('active');
       doorsText.classList.add('selected');
+    }
+
+    if (stepList.classList.contains('active')) {
+      stepTriangle.style.transform = 'rotate(180deg)';
+    } else {
+      stepTriangle.style.transform = '';
+    }
+
+    if (doorsList.classList.contains('active')) {
+      doorTriangle.style.transform = 'rotate(180deg)';
+    } else {
+      doorTriangle.style.transform = '';
     }
   });
 };

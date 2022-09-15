@@ -46,6 +46,8 @@ const stepText = document.querySelector('.select-step-text');
 const stepResult = document.querySelector('.select-step-result');
 const stepList = document.querySelector('.select-step-list');
 const doorsList = document.querySelector('.select-doors-list');
+const stepTriangle = document.querySelector('.select-step-toggle');
+const doorTriangle = document.querySelector('.select-doors-toggle');
 
 export default {
   spanArea,
@@ -82,4 +84,6 @@ export default {
   stepResult,
   stepList,
   doorsList,
+  stepTriangle,
+  doorTriangle,
 };
