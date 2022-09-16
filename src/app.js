@@ -1,9 +1,9 @@
 import './modules/selects.js';
-import {getColumnCount} from './modules/columns.js';
-import {getFermLength, getFermCount, getArea} from './modules/hangarSizing.js';
-import {getProgWallsCount, getProgCeilingCount} from './modules/progs.js';
-import {getStrengtheningConstructionCount} from './modules/straighteningConsturctions.js';
-import {validateFunction} from './modules/validations.js';
+import { getColumnCount } from './modules/columns.js';
+import { getFermLength, getFermCount, getArea } from './modules/hangarSizing.js';
+import { getProgWallsCount, getProgCeilingCount } from './modules/progs.js';
+import { getStrengtheningConstructionCount } from './modules/straighteningConsturctions.js';
+import { validateFunction } from './modules/validations.js';
 import selectors from './modules/selectors.js';
 const {
   spanHangarWidth,
@@ -32,9 +32,7 @@ const control = () => {
     const gatesWidth = document.getElementById('floatGatesWidth').value;
 
     const fermRise = width <= 19 ? 3.2 : 3.5;
-    console.log("🚀 ~ file: app.js ~ line 45 ~ count ~ fermRise", fermRise);
     const fermLen = (Math.sqrt((fermRise ** 2) + (width / 2) ** 2)).toFixed(2); // длина 1 половинки фермы
-    console.log("🚀 ~ file: app.js ~ line 47 ~ count ~ fermLen", fermLen);
 
     if (!(width && length && height)) return;
 
