@@ -29,19 +29,28 @@ const selectsEvents = () => {
       gatesList.classList.remove('active');
       stepList.classList.remove('active');
     }
-
     if (target.closest('.select-step-item')) {
-      stepResult.textContent = target.textContent;
       stepResult.dataset.step = target.dataset.step;
+      if (target.dataset.step === '0') {
+        stepText.classList.remove('selected');
+        stepResult.textContent = '';
+      } else {
+        stepResult.textContent = target.textContent;
+        stepText.classList.add('selected');
+      }
       stepList.classList.remove('active');
-      stepText.classList.add('selected');
     }
 
     if (target.closest('.select-gates-item')) {
-      gatesResult.textContent = target.textContent;
       gatesResult.dataset.gates = target.dataset.gates;
+      if (target.dataset.gates === '0') {
+        gatesText.classList.remove('selected');
+        gatesResult.textContent = '';
+      } else {
+        gatesResult.textContent = target.textContent;
+        gatesText.classList.add('selected');
+      }
       gatesList.classList.remove('active');
-      gatesText.classList.add('selected');
     }
 
     if (stepList.classList.contains('active')) {

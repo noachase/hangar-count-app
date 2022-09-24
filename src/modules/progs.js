@@ -2,6 +2,8 @@ import selectors from './selectors.js';
 const {
   tdPcsProgWalls,
   tdMProgWalls,
+  tdPcsProgFront,
+  tdMProgFront,
   tdPcsProgCeiling,
   tdMProgCeiling,
 } = selectors;
@@ -21,6 +23,10 @@ export const getProgWallsCount = (length, height, width) => {
     innerPcs = (progSectionCount + 1) * 2 + ` шт`;
     tdPcsProgWalls.textContent = innerPcs;
   }
+
+  const gatesCalcs = width * 6;
+  tdPcsProgFront.textContent = '6 шт';
+  tdMProgFront.textContent = `${gatesCalcs} м`;
 
   const totalProgPipeLength = (wallProgPipeLength + frontonProgPipeLength) * innerPcs.split(' ')[0];
 

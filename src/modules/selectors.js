@@ -6,7 +6,7 @@ const spanHangarLength = document.querySelector('.res-hangar-length');
 const spanPipeCount = document.querySelector('.res-ferm-pipe-count');
 const spanPipeSnakeCount = document.querySelector('.res-ferm-snake-pipe-count');
 // const spanPillarsFrontonCount = document.querySelector('.pillars-fronton-count');
-const pipeTable = document.querySelector('.table');
+const pipeTable = document.querySelector('.pipe-table');
 
 const tdPcsPillars = document.querySelector('.td-pcs-pillars'); // стойки
 const tdMPillars = document.querySelector('.td-m-pillars');
@@ -16,6 +16,9 @@ const tdMPillarsFront = document.querySelector('.td-m-pillarsFront');
 
 const tdPcsProgWalls = document.querySelector('.td-pcs-joists-walls'); // прогоны стены
 const tdMProgWalls = document.querySelector('.td-m-joists-walls');
+
+const tdPcsProgFront = document.querySelector('.td-pcs-joists-front'); // прогоны торцевые
+const tdMProgFront = document.querySelector('.td-m-joists-front');
 
 const tdPcsProgCeiling = document.querySelector('.td-pcs-joists-ceiling'); // прогоны крыша
 const tdMProgCeiling = document.querySelector('.td-m-joists-ceiling');
@@ -39,6 +42,12 @@ const inputWidth = document.getElementById('floatWidth');
 const inputLength = document.getElementById('floatLength');
 const inputHeight = document.getElementById('floatHeight');
 
+// Расчёты листа
+
+const profileWalls = document.querySelector('.td-pcs-profile-walls');
+const profileFront = document.querySelector('.td-pcs-profile-front');
+const profileCeiling = document.querySelector('.td-pcs-profile-ceiling');
+
 // Всё для селектов
 
 const gatesText = document.querySelector('.select-gates-text');
@@ -49,6 +58,10 @@ const stepList = document.querySelector('.select-step-list');
 const gatesList = document.querySelector('.select-gates-list');
 const stepTriangle = document.querySelector('.select-step-toggle');
 const doorTriangle = document.querySelector('.select-gates-toggle');
+
+// Вспомогательные селекторы
+
+const requiredInputs = document.querySelectorAll('.required-input');
 
 export default {
   spanArea,
@@ -65,6 +78,8 @@ export default {
   tdMPillarsFront,
   tdPcsProgWalls,
   tdMProgWalls,
+  tdPcsProgFront,
+  tdMProgFront,
   tdPcsProgCeiling,
   tdMProgCeiling,
   tdPcsFerm,
@@ -88,4 +103,8 @@ export default {
   gatesList,
   stepTriangle,
   doorTriangle,
+  requiredInputs,
+  profileWalls,
+  profileFront,
+  profileCeiling,
 };

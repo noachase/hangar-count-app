@@ -5,6 +5,7 @@ import { getProgWallsCount, getProgCeilingCount } from './modules/progs.js';
 import { getStrengtheningConstructionCount } from './modules/straighteningConsturctions.js';
 import { validateFunction } from './modules/validations.js';
 import { gatesCalcs } from './modules/gatesCalcs.js';
+import { getProfileCount } from './modules/profileCount.js';
 import selectors from './modules/selectors.js';
 const {
   spanHangarWidth,
@@ -12,6 +13,7 @@ const {
   gatesResult,
   inputForm,
   btn,
+  requiredInputs,
 } = selectors;
 
 
@@ -24,9 +26,18 @@ const init = (height, width, fermLen, length, gatesQuantity) => {
   getProgCeilingCount(length, fermLen);
   getFermCount(length, fermLen);
   gatesCalcs(gatesQuantity);
+  getProfileCount(height, width, length);
 };
 
 const control = () => {
+  requiredInputs.forEach(input => {
+    input.addEventListener('input', () => {
+      const btnsArr = Array.from(requiredInputs);
+      btnsArr.every(button => button.value.length > 0) ?
+      btn.disabled = false : btn.disabled = true;
+    });
+  });
+
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     const width = document.getElementById('floatWidth').value;

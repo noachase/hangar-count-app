@@ -73,19 +73,19 @@
 
           <form class="needs-validation" novalidate>
             <div class="form-floating mb-3 has-validation">
-              <input required type="text" class="form-control" id="floatWidth" placeholder="Введите ширину ангара">
+              <input required type="text" class="form-control required-input" id="floatWidth" placeholder="Введите ширину ангара">
               <label for="floatWidth">Ширина в м</label>
             </div>
             <div class="form-floating mb-3">
-              <input required type="text" class="form-control" id="floatLength" placeholder="Введите длину ангара">
+              <input required type="text" class="form-control required-input" id="floatLength" placeholder="Введите длину ангара">
               <label for="floatLength">Длина в м</label>
             </div>
             <div class="form-floating mb-3">
-              <input required type="text" class="form-control" id="floatHeight" placeholder="Введите высоту ангара">
+              <input required type="text" class="form-control required-input" id="floatHeight" placeholder="Введите высоту ангара">
               <label for="floatHeight">Высота под ферму в м</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatGatesWidth" placeholder="Введите угол наклона кровли">
+              <input type="text" class="form-control required-input" id="floatGatesWidth" placeholder="Введите угол наклона кровли">
               <label for="floatGatesWidth">Ширина ворот (фронтон) в м</label>
             </div>
             <div class="form-floating mb-3">
@@ -119,7 +119,7 @@
               </div>
             </div>
             <button type="submit" class="btn btn-lg btn-outline-light button" data-bs-toggle="modal"
-              data-bs-target="#exampleModal">
+              data-bs-target="#exampleModal" disabled>
               РАССЧИТАТЬ
             </button>
           </form>
@@ -193,7 +193,7 @@
                   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                     <!-- TABLE ==========================================================-->
-                    <table class="table table-striped">
+                    <table class="table table-striped pipe-table">
                       <thead>
                         <tr>
                           <th scope="col">#</th>
@@ -205,49 +205,78 @@
                       <tbody>
                         <tr>
                           <th scope="row">Стойки стеновые</th>
-                          <td class='td-pcs-pillars'></td>
-                          <td class='td-m-pillars'></td>
+                          <td class="td-pcs-pillars"></td>
+                          <td class="td-m-pillars"></td>
                         </tr>
                         <tr>
                           <th scope="row">Стойки торцевые</th>
-                          <td class='td-pcs-pillarsFront'></td>
-                          <td class='td-m-pillarsFront'></td>
+                          <td class="td-pcs-pillarsFront"></td>
+                          <td class="td-m-pillarsFront"></td>
                         </tr>
-                        
                         <tr>
                           <th scope="row">Прогоны стены</th>
-                          <td class='td-pcs-joists-walls'></td>
-                          <td class='td-m-joists-walls'>м</td>
+                          <td class="td-pcs-joists-walls"></td>
+                          <td class="td-m-joists-walls">м</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Прогоны торцевые</th>
+                          <td class="td-pcs-joists-front"></td>
+                          <td class="td-m-joists-front"></td>
                         </tr>
                         <tr>
                           <th scope="row">Прогоны крыша</th>
-                          <td class='td-pcs-joists-ceiling'></td>
-                          <td class='td-m-joists-ceiling'>м</td>
+                          <td class="td-pcs-joists-ceiling"></td>
+                          <td class="td-m-joists-ceiling">м</td>
                         </tr>
                         <tr>
                           <th scope="row">Фермы</th>
-                          <td class='td-pcs-girders'></td>
-                          <td class='td-m-girders'>м</td>
+                          <td class="td-pcs-girders"></td>
+                          <td class="td-m-girders">м</td>
                         </tr>
                         <tr>
                           <th scope="row">Раскосы</th>
-                          <td class='td-pcs-braces'></td>
-                          <td class='td-m-braces'>м</td>
+                          <td class="td-pcs-braces"></td>
+                          <td class="td-m-braces">м</td>
                         </tr>
                         <tr>
                           <th scope="row">Кресты</th>
-                          <td class='td-pcs-crests'></td>
-                          <td class='td-m-crests'>м</td>
+                          <td class="td-pcs-crests"></td>
+                          <td class="td-m-crests">м</td>
                         </tr>
                         <tr>
                           <th scope="row">Галочки</th>
-                          <td class='td-pcs-checks'></td>
-                          <td class='td-m-checks'>м</td>
+                          <td class="td-pcs-checks"></td>
+                          <td class="td-m-checks">м</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
-                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <table class="table table-striped profile-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Кол-во листа для:</th>
+                          <th scope="col">Метраж</th>
+                          <!-- <th scope="col">Handle</th> -->
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Стен</th>
+                          <td class="td-pcs-profile-walls"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Фронтонов</th>
+                          <td class="td-pcs-profile-front"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Крыши</th>
+                          <td class="td-pcs-profile-ceiling"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
                 </div>
 
