@@ -1,4 +1,4 @@
-import {addTenPercent} from './helperFunctions.js';
+import { addTenPercent } from './helperFunctions.js';
 import selectors from './selectors.js';
 const {
   spanArea,
@@ -56,7 +56,7 @@ export const getFermCount = (length, fermLen, columnStep) => {
   tdMFerm.textContent = pipeLen + ` м`;
   // tdMRos.textContent = rosPipeLength + ` м`;
 
-  const oneRosCalcs = (((fermLen * 2) * 2) * 2).toFixed(1);
+  const oneRosCalcs = addTenPercent((((fermLen * 2) * 2) * 2), 1);
   tdMRos.textContent = `${oneRosCalcs} м`;
 
   const totalRosCalcs = (oneRosCalcs * fermCol).toFixed(1);
