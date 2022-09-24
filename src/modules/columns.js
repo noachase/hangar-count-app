@@ -40,6 +40,6 @@ export const getColumnCount = (length, height, width) => {
   tdPcsPillars.textContent = innerPcs + ` шт`;
   tdMPillars.textContent = innerM + ` м`;
   // spanPillarsFrontonCount.textContent = frontonPillarsCount + ` шт`
-  tdPcsPillarsFront.textContent = frontonPillarsCount; // стойки торцевые кол-во
-  tdMPillarsFront.textContent = frontonPillarsLength + ` м`;
+  tdPcsPillarsFront.textContent = `${frontonPillarsCount} шт`; // стойки торцевые кол-во
+  tdMPillarsFront.textContent = `${frontonPillarsLength} м`;
 };
