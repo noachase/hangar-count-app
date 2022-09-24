@@ -7,7 +7,11 @@ export const gatesCalcs = (quantity) => {
   const oneGatePipeLength = 72;
   const totalPipeLength = quantity * oneGatePipeLength;
 
-  if (!tableCalculationGates && quantity && quantity > 0) {
+  if (tableCalculationGates) {
+    tableCalculationGates.parentNode.remove();
+  }
+
+  if (quantity && quantity > 0) {
     tBody.insertAdjacentHTML('beforeend', `
       <tr>
         <th scope="row">Труба ворота</th>
