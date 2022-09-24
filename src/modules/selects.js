@@ -8,6 +8,8 @@ const {
   gatesList,
   stepTriangle,
   doorTriangle,
+  btn,
+  requiredInputs,
 } = selectors;
 
 const selectsEvents = () => {
@@ -31,13 +33,14 @@ const selectsEvents = () => {
     }
     if (target.closest('.select-step-item')) {
       stepResult.dataset.step = target.dataset.step;
-      if (target.dataset.step === '0') {
-        stepText.classList.remove('selected');
-        stepResult.textContent = '';
-      } else {
-        stepResult.textContent = target.textContent;
-        stepText.classList.add('selected');
-      }
+      stepResult.textContent = target.textContent;
+
+      const inputsArray = Array.from(requiredInputs);
+      inputsArray.every(input => input.value.length > 0) &&
+      stepResult.textContent.length > 0 ?
+      btn.disabled = false : btn.disabled = true;
+
+      stepText.classList.add('selected');
       stepList.classList.remove('active');
     }
 

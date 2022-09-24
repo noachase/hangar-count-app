@@ -14,9 +14,9 @@ export const getFermLength = (fermLen) => {
   spanFermLength.textContent = fermLen * 2 + ' м';
 };
 
-export const getFermCount = (length, fermLen) => {
-  const sectionCountStd = Math.ceil(length / 3); // кол-во секций в ангаре
-  const lengthRemainder = length % 3; // остаток от длинны 3х метровой секции
+export const getFermCount = (length, fermLen, columnStep) => {
+  const sectionCountStd = Math.ceil(length / columnStep); // кол-во секций в ангаре
+  const lengthRemainder = length % columnStep; // остаток от длинны 3х метровой секции
 
   let fermCol = null;
   let fermColTd = null;
