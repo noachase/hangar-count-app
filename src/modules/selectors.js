@@ -17,6 +17,9 @@ const tdMPillarsFront = document.querySelector('.td-m-pillarsFront');
 const tdPcsProgWalls = document.querySelector('.td-pcs-joists-walls'); // прогоны стены
 const tdMProgWalls = document.querySelector('.td-m-joists-walls');
 
+const tdPcsProgFront = document.querySelector('.td-pcs-joists-front'); // прогоны торцевые
+const tdMProgFront = document.querySelector('.td-m-joists-front');
+
 const tdPcsProgCeiling = document.querySelector('.td-pcs-joists-ceiling'); // прогоны крыша
 const tdMProgCeiling = document.querySelector('.td-m-joists-ceiling');
 
@@ -65,6 +68,8 @@ export default {
   tdMPillarsFront,
   tdPcsProgWalls,
   tdMProgWalls,
+  tdPcsProgFront,
+  tdMProgFront,
   tdPcsProgCeiling,
   tdMProgCeiling,
   tdPcsFerm,
