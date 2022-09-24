@@ -3,6 +3,7 @@ const spanFermLength = document.querySelector('.res-ferm-length');
 const spanFermCount = document.querySelector('.res-ferm-count');
 const spanHangarWidth = document.querySelector('.res-hangar-width');
 const spanHangarLength = document.querySelector('.res-hangar-length');
+const spanHangarHeight = document.querySelector('.res-hangar-height');
 const spanPipeCount = document.querySelector('.res-ferm-pipe-count');
 const spanPipeSnakeCount = document.querySelector('.res-ferm-snake-pipe-count');
 // const spanPillarsFrontonCount = document.querySelector('.pillars-fronton-count');
@@ -26,8 +27,11 @@ const tdMProgCeiling = document.querySelector('.td-m-joists-ceiling');
 const tdPcsFerm = document.querySelector('.td-pcs-girders'); // фермы
 const tdMFerm = document.querySelector('.td-m-girders');
 
-const tdPcsRos = document.querySelector('.td-pcs-braces'); // раскосы
+const tdPcsRos = document.querySelector('.td-pcs-braces'); // раскосы 1
 const tdMRos = document.querySelector('.td-m-braces');
+
+const tdPcsTotalRos = document.querySelector('.td-pcs-total-braces'); // раскосы все
+const tdMTotalRos = document.querySelector('.td-m-total-braces');
 
 const tdPcsCrests = document.querySelector('.td-pcs-crests'); // кресты
 const tdMCrests = document.querySelector('.td-m-crests');
@@ -69,6 +73,7 @@ export default {
   spanFermCount,
   spanHangarWidth,
   spanHangarLength,
+  spanHangarHeight,
   spanPipeCount,
   spanPipeSnakeCount,
   pipeTable,
@@ -107,4 +112,6 @@ export default {
   profileWalls,
   profileFront,
   profileCeiling,
+  tdPcsTotalRos,
+  tdMTotalRos,
 };
