@@ -1,11 +1,11 @@
 import selectors from './selectors.js';
 const {
-  doorsText,
-  doorsResult,
+  gatesText,
+  gatesResult,
   stepText,
   stepResult,
   stepList,
-  doorsList,
+  gatesList,
   stepTriangle,
   doorTriangle,
 } = selectors;
@@ -14,32 +14,34 @@ const selectsEvents = () => {
   document.body.addEventListener('click', (event) => {
     const target = event.target;
     if (target.closest('.select-step-title') ||
-        target.closest('.select-doors-title') ||
+        target.closest('.select-gates-title') ||
         target.closest('.select-step-item') ||
-        target.closest('.select-doors-item')) {
+        target.closest('.select-gates-item')) {
       if (target.closest('.select-step-title')) {
         stepList.classList.toggle('active');
-        doorsList.classList.remove('active');
+        gatesList.classList.remove('active');
       }
-      if (target.closest('.select-doors-title')) {
-        doorsList.classList.toggle('active');
+      if (target.closest('.select-gates-title')) {
+        gatesList.classList.toggle('active');
         stepList.classList.remove('active');
       }
     } else {
-      doorsList.classList.remove('active');
+      gatesList.classList.remove('active');
       stepList.classList.remove('active');
     }
 
     if (target.closest('.select-step-item')) {
       stepResult.textContent = target.textContent;
+      stepResult.dataset.step = target.dataset.step;
       stepList.classList.remove('active');
       stepText.classList.add('selected');
     }
 
-    if (target.closest('.select-doors-item')) {
-      doorsResult.textContent = target.textContent;
-      doorsList.classList.remove('active');
-      doorsText.classList.add('selected');
+    if (target.closest('.select-gates-item')) {
+      gatesResult.textContent = target.textContent;
+      gatesResult.dataset.gates = target.dataset.gates;
+      gatesList.classList.remove('active');
+      gatesText.classList.add('selected');
     }
 
     if (stepList.classList.contains('active')) {
@@ -48,7 +50,7 @@ const selectsEvents = () => {
       stepTriangle.style.transform = '';
     }
 
-    if (doorsList.classList.contains('active')) {
+    if (gatesList.classList.contains('active')) {
       doorTriangle.style.transform = 'rotate(180deg)';
     } else {
       doorTriangle.style.transform = '';

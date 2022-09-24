@@ -6,6 +6,7 @@ const spanHangarLength = document.querySelector('.res-hangar-length');
 const spanPipeCount = document.querySelector('.res-ferm-pipe-count');
 const spanPipeSnakeCount = document.querySelector('.res-ferm-snake-pipe-count');
 // const spanPillarsFrontonCount = document.querySelector('.pillars-fronton-count');
+const pipeTable = document.querySelector('.table');
 
 const tdPcsPillars = document.querySelector('.td-pcs-pillars'); // стойки
 const tdMPillars = document.querySelector('.td-m-pillars');
@@ -40,14 +41,14 @@ const inputHeight = document.getElementById('floatHeight');
 
 // Всё для селектов
 
-const doorsText = document.querySelector('.select-doors-text');
-const doorsResult = document.querySelector('.select-doors-result');
+const gatesText = document.querySelector('.select-gates-text');
+const gatesResult = document.querySelector('.select-gates-result');
 const stepText = document.querySelector('.select-step-text');
 const stepResult = document.querySelector('.select-step-result');
 const stepList = document.querySelector('.select-step-list');
-const doorsList = document.querySelector('.select-doors-list');
+const gatesList = document.querySelector('.select-gates-list');
 const stepTriangle = document.querySelector('.select-step-toggle');
-const doorTriangle = document.querySelector('.select-doors-toggle');
+const doorTriangle = document.querySelector('.select-gates-toggle');
 
 export default {
   spanArea,
@@ -57,6 +58,7 @@ export default {
   spanHangarLength,
   spanPipeCount,
   spanPipeSnakeCount,
+  pipeTable,
   tdPcsPillars,
   tdMPillars,
   tdPcsPillarsFront,
@@ -78,12 +80,12 @@ export default {
   inputWidth,
   inputLength,
   inputHeight,
-  doorsText,
-  doorsResult,
+  gatesText,
+  gatesResult,
   stepText,
   stepResult,
   stepList,
-  doorsList,
+  gatesList,
   stepTriangle,
   doorTriangle,
 };

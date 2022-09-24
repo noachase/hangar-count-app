@@ -5,13 +5,13 @@
 }
 
 .select-step,
-.select-doors {
+.select-gates {
   position: relative;
   width: calc(50% - 5px);
 }
 
 .select-step-title,
-.select-doors-title {
+.select-gates-title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -23,7 +23,7 @@
 }
 
 .select-step-text,
-.select-doors-text {
+.select-gates-text {
   transition: all 0.1s ease-in-out;
 }
 
@@ -33,19 +33,19 @@
   line-height: 100%;
 }
 
-.select-doors-text.selected {
+.select-gates-text.selected {
   opacity: .65;
   transform: scale(.85) translateX(-0.7rem);
   line-height: 100%;
 }
 
 .select-step-result,
-.select-doors-result {
+.select-gates-result {
   padding-left: 0.1rem;
 }
 
 .select-step-list,
-.select-doors-list {
+.select-gates-list {
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -58,24 +58,24 @@
 }
 
 .select-step-list.active,
-.select-doors-list.active {
+.select-gates-list.active {
   display: flex;
   outline: none;
 }
 
 .select-step-item,
-.select-doors-item {
+.select-gates-item {
   border-radius: 5px;
   cursor: pointer;
 }
 
 .select-step-item:hover,
-.select-doors-item:hover {
+.select-gates-item:hover {
   background-color: #86b7fe;;
 }
 
 .select-step-toggle,
-.select-doors-toggle {
+.select-gates-toggle {
   position: absolute;
   top: calc(50% - 5px);
   right: 5%;
@@ -93,7 +93,7 @@
   }
 
   .select-step,
-  .select-doors {
+  .select-gates {
     width: 100%;
     height: calc(3.5rem + 2px);
   }

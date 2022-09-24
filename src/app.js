@@ -4,16 +4,18 @@ import { getFermLength, getFermCount, getArea } from './modules/hangarSizing.js'
 import { getProgWallsCount, getProgCeilingCount } from './modules/progs.js';
 import { getStrengtheningConstructionCount } from './modules/straighteningConsturctions.js';
 import { validateFunction } from './modules/validations.js';
+import { gatesCalcs } from './modules/gatesCalcs.js';
 import selectors from './modules/selectors.js';
 const {
   spanHangarWidth,
   spanHangarLength,
+  gatesResult,
   inputForm,
   btn,
 } = selectors;
 
 
-const init = (height, width, fermLen, length) => {
+const init = (height, width, fermLen, length, gatesQuantity) => {
   getArea(width, length);
   getFermLength(fermLen, length);
   getStrengtheningConstructionCount(height, length);
@@ -21,6 +23,7 @@ const init = (height, width, fermLen, length) => {
   getProgWallsCount(length, height, width);
   getProgCeilingCount(length, fermLen);
   getFermCount(length, fermLen);
+  gatesCalcs(gatesQuantity);
 };
 
 const control = () => {
@@ -30,6 +33,7 @@ const control = () => {
     const length = document.getElementById('floatLength').value;
     const height = document.getElementById('floatHeight').value;
     const gatesWidth = document.getElementById('floatGatesWidth').value;
+    const gatesQuantity = gatesResult.dataset.gates;
 
     const fermRise = width <= 19 ? 3.2 : 3.5;
     const fermLen = (Math.sqrt((fermRise ** 2) + (width / 2) ** 2)).toFixed(2); // длина 1 половинки фермы
@@ -38,7 +42,7 @@ const control = () => {
 
     spanHangarWidth.textContent = width + ` м`;
     spanHangarLength.textContent = length + ` м`;
-    init(height, width, fermLen, length);
+    init(height, width, fermLen, length, gatesQuantity);
   });
 
   inputForm.addEventListener('input', validateFunction);
