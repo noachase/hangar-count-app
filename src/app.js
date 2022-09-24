@@ -12,6 +12,7 @@ const {
   gatesResult,
   inputForm,
   btn,
+  requiredInputs,
 } = selectors;
 
 
@@ -27,6 +28,14 @@ const init = (height, width, fermLen, length, gatesQuantity) => {
 };
 
 const control = () => {
+  requiredInputs.forEach(input => {
+    input.addEventListener('input', () => {
+      const btnsArr = Array.from(requiredInputs);
+      btnsArr.every(button => button.value.length > 0) ?
+      btn.disabled = false : btn.disabled = true;
+    });
+  });
+
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     const width = document.getElementById('floatWidth').value;

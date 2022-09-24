@@ -53,6 +53,10 @@ const gatesList = document.querySelector('.select-gates-list');
 const stepTriangle = document.querySelector('.select-step-toggle');
 const doorTriangle = document.querySelector('.select-gates-toggle');
 
+// Вспомогательные селекторы
+
+const requiredInputs = document.querySelectorAll('.required-input');
+
 export default {
   spanArea,
   spanFermLength,
@@ -93,4 +97,5 @@ export default {
   gatesList,
   stepTriangle,
   doorTriangle,
+  requiredInputs,
 };
