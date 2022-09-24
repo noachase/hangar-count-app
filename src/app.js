@@ -33,8 +33,8 @@ const init = (height, width, fermLen, length, columnStep, gatesQuantity) => {
 const control = () => {
   requiredInputs.forEach(input => {
     input.addEventListener('input', () => {
-      const btnsArr = Array.from(requiredInputs);
-      btnsArr.every(button => button.value.length > 0) &&
+      const inputsArray = Array.from(requiredInputs);
+      inputsArray.every(input => input.value.length > 0) &&
       stepResult.textContent.length > 0 ?
       btn.disabled = false : btn.disabled = true;
     });
@@ -46,7 +46,7 @@ const control = () => {
     const length = document.getElementById('floatLength').value;
     const height = document.getElementById('floatHeight').value;
     const gatesWidth = document.getElementById('floatGatesWidth').value;
-    const gatesQuantity = gatesResult.dataset.gates;
+    const gatesQuantity = +gatesResult.dataset.gates;
     const columnStep = +stepResult.dataset.step;
 
     const fermRise = width <= 19 ? 3.2 : 3.5;

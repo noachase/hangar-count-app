@@ -35,8 +35,8 @@ const selectsEvents = () => {
       stepResult.dataset.step = target.dataset.step;
       stepResult.textContent = target.textContent;
 
-      const btnsArr = Array.from(requiredInputs);
-      btnsArr.every(button => button.value.length > 0) &&
+      const inputsArray = Array.from(requiredInputs);
+      inputsArray.every(input => input.value.length > 0) &&
       stepResult.textContent.length > 0 ?
       btn.disabled = false : btn.disabled = true;
 
