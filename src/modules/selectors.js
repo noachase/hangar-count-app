@@ -6,7 +6,7 @@ const spanHangarLength = document.querySelector('.res-hangar-length');
 const spanPipeCount = document.querySelector('.res-ferm-pipe-count');
 const spanPipeSnakeCount = document.querySelector('.res-ferm-snake-pipe-count');
 // const spanPillarsFrontonCount = document.querySelector('.pillars-fronton-count');
-const pipeTable = document.querySelector('.table');
+const pipeTable = document.querySelector('.pipe-table');
 
 const tdPcsPillars = document.querySelector('.td-pcs-pillars'); // стойки
 const tdMPillars = document.querySelector('.td-m-pillars');
@@ -41,6 +41,12 @@ const inputForm = document.querySelector('.inputForm');
 const inputWidth = document.getElementById('floatWidth');
 const inputLength = document.getElementById('floatLength');
 const inputHeight = document.getElementById('floatHeight');
+
+// Расчёты листа
+
+const profileWalls = document.querySelector('.td-pcs-profile-walls');
+const profileFront = document.querySelector('.td-pcs-profile-front');
+const profileCeiling = document.querySelector('.td-pcs-profile-ceiling');
 
 // Всё для селектов
 
@@ -98,4 +104,7 @@ export default {
   stepTriangle,
   doorTriangle,
   requiredInputs,
+  profileWalls,
+  profileFront,
+  profileCeiling,
 };

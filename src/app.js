@@ -5,6 +5,7 @@ import { getProgWallsCount, getProgCeilingCount } from './modules/progs.js';
 import { getStrengtheningConstructionCount } from './modules/straighteningConsturctions.js';
 import { validateFunction } from './modules/validations.js';
 import { gatesCalcs } from './modules/gatesCalcs.js';
+import { getProfileCount } from './modules/profileCount.js';
 import selectors from './modules/selectors.js';
 const {
   spanHangarWidth,
@@ -25,6 +26,7 @@ const init = (height, width, fermLen, length, gatesQuantity) => {
   getProgCeilingCount(length, fermLen);
   getFermCount(length, fermLen);
   gatesCalcs(gatesQuantity);
+  getProfileCount(height, width, length);
 };
 
 const control = () => {

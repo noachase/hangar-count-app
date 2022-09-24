@@ -24,8 +24,9 @@ export const getProgWallsCount = (length, height, width) => {
     tdPcsProgWalls.textContent = innerPcs;
   }
 
+  const gatesCalcs = width * 6;
   tdPcsProgFront.textContent = '6 шт';
-  tdMProgFront.textContent = `${width * 6} м`;
+  tdMProgFront.textContent = `${gatesCalcs} м`;
 
   const totalProgPipeLength = (wallProgPipeLength + frontonProgPipeLength) * innerPcs.split(' ')[0];
 
