@@ -7,7 +7,7 @@ const {
 } = selectors;
 
 // стойки
-export const getColumnCount = (length, height, width) => {
+export const getColumnCount = (length, height, width, columnStep) => {
   // ! TODO посчитать доп стойки для фронтонов
   // const distanceFromGatesToEdge = (width - gatesWidth) / 2
   const frontonPillarsCount = (Math.floor(width / 4)) * 2;
@@ -21,9 +21,10 @@ export const getColumnCount = (length, height, width) => {
   // } else {
   //   frontonPillarsCount = 0
   // }
+
   const frontonPillarsLength = frontonPillarsCount * 7; // 1 столб торцевой = 7м
-  const sectionCountStd = Math.ceil(length / 3);
-  const lengthRemainder = length % 3;
+  const sectionCountStd = Math.ceil(length / columnStep);
+  const lengthRemainder = length % columnStep;
   let innerPcs, innerM = null;
 
   if (lengthRemainder === 0) {

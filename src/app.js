@@ -11,20 +11,21 @@ const {
   spanHangarWidth,
   spanHangarLength,
   gatesResult,
+  stepResult,
   inputForm,
   btn,
   requiredInputs,
 } = selectors;
 
 
-const init = (height, width, fermLen, length, gatesQuantity) => {
+const init = (height, width, fermLen, length, columnStep, gatesQuantity) => {
   getArea(width, length);
   getFermLength(fermLen, length);
   getStrengtheningConstructionCount(height, length);
-  getColumnCount(length, height, width);
+  getColumnCount(length, height, width, columnStep);
   getProgWallsCount(length, height, width);
   getProgCeilingCount(length, fermLen);
-  getFermCount(length, fermLen);
+  getFermCount(length, fermLen, columnStep);
   gatesCalcs(gatesQuantity);
   getProfileCount(height, width, length);
 };
@@ -33,7 +34,8 @@ const control = () => {
   requiredInputs.forEach(input => {
     input.addEventListener('input', () => {
       const btnsArr = Array.from(requiredInputs);
-      btnsArr.every(button => button.value.length > 0) ?
+      btnsArr.every(button => button.value.length > 0) &&
+      stepResult.textContent.length > 0 ?
       btn.disabled = false : btn.disabled = true;
     });
   });
@@ -45,6 +47,7 @@ const control = () => {
     const height = document.getElementById('floatHeight').value;
     const gatesWidth = document.getElementById('floatGatesWidth').value;
     const gatesQuantity = gatesResult.dataset.gates;
+    const columnStep = +stepResult.dataset.step;
 
     const fermRise = width <= 19 ? 3.2 : 3.5;
     const fermLen = (Math.sqrt((fermRise ** 2) + (width / 2) ** 2)).toFixed(2); // длина 1 половинки фермы
@@ -53,7 +56,7 @@ const control = () => {
 
     spanHangarWidth.textContent = width + ` м`;
     spanHangarLength.textContent = length + ` м`;
-    init(height, width, fermLen, length, gatesQuantity);
+    init(height, width, fermLen, length, columnStep, gatesQuantity);
   });
 
   inputForm.addEventListener('input', validateFunction);
