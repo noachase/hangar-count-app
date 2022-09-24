@@ -10,6 +10,7 @@ import selectors from './modules/selectors.js';
 const {
   spanHangarWidth,
   spanHangarLength,
+  spanHangarHeight,
   gatesResult,
   stepResult,
   inputForm,
@@ -54,8 +55,9 @@ const control = () => {
 
     if (!(width && length && height)) return;
 
-    spanHangarWidth.textContent = width + ` м`;
-    spanHangarLength.textContent = length + ` м`;
+    spanHangarWidth.textContent = `${width} м`;
+    spanHangarLength.textContent = `${length} м`;
+    spanHangarHeight.textContent = `${height} м`;
     init(height, width, fermLen, length, columnStep, gatesQuantity);
   });
 

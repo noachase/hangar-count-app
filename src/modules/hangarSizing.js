@@ -8,6 +8,8 @@ const {
   tdMFerm,
   tdPcsRos,
   tdMRos,
+  tdPcsTotalRos,
+  tdMTotalRos,
 } = selectors;
 
 export const getFermLength = (fermLen) => {
@@ -21,7 +23,7 @@ export const getFermCount = (length, fermLen, columnStep) => {
   let fermCol = null;
   let fermColTd = null;
   let sectionCol = null;
-  let rosPipeLength = null;
+  // let rosPipeLength = null;
   let pipeLen = null;
   let sectionHintText = '';
 
@@ -31,29 +33,36 @@ export const getFermCount = (length, fermLen, columnStep) => {
     fermColTd = sectionCountStd + 1;
     sectionCol = sectionCountStd + 1;
     pipeLen = addTenPercent(+((sectionCol * 2 * fermLen)), 1);
-    rosPipeLength = addTenPercent(Math.ceil(pipeLen * 1.5), 1);
+    // rosPipeLength = addTenPercent(Math.ceil(pipeLen * 1.5), 1);
     sectionHintText = ` шт`;
     // если длина ангара не делится нацело, то остаток прибавляется к последнему пролету
   } else if (lengthRemainder !== 0 && lengthRemainder <= 1) {
     fermCol = sectionCountStd * 2;
     sectionCol = sectionCountStd;
     pipeLen = addTenPercent(+(fermCol * fermLen));
-    rosPipeLength = addTenPercent(Math.ceil(pipeLen * 1.5), 1);
+    // rosPipeLength = addTenPercent(Math.ceil(pipeLen * 1.5), 1);
     sectionHintText = ` шт. из них 1 пролет до 4м`;
   } else if (lengthRemainder !== 0 && lengthRemainder > 1 && lengthRemainder <= 2) {
     fermCol = sectionCountStd * 2;
     fermColTd = sectionCountStd;
     sectionCol = sectionCountStd;
     pipeLen = addTenPercent(+(fermCol * fermLen));
-    rosPipeLength = addTenPercent(Math.ceil(pipeLen * 1.5), 1);
+    // rosPipeLength = addTenPercent(Math.ceil(pipeLen * 1.5), 1);
     sectionHintText = ` шт. из них 2 пролета до 4м`;
   }
 
   tdPcsFerm.textContent = fermColTd + ` шт`;
   spanFermCount.textContent = sectionCol + sectionHintText;
   tdMFerm.textContent = pipeLen + ` м`;
-  tdMRos.textContent = rosPipeLength + ` м`;
+  // tdMRos.textContent = rosPipeLength + ` м`;
 
+  const oneRosCalcs = (((fermLen * 2) * 2) * 2).toFixed(1);
+  tdMRos.textContent = `${oneRosCalcs} м`;
+
+  const totalRosCalcs = (oneRosCalcs * fermCol).toFixed(1);
+  tdMTotalRos.textContent = `${totalRosCalcs} м`;
+
+  tdPcsTotalRos.textContent = '---';
   tdPcsRos.textContent = '---';
 };
 
