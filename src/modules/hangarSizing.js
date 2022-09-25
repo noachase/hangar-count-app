@@ -50,7 +50,6 @@ export const getFermCount = (length, fermLen, columnStep) => {
     // rosPipeLength = addTenPercent(Math.ceil(pipeLen * 1.5), 1);
     sectionHintText = ` шт. из них 2 пролета до 4м`;
   }
-
   tdPcsFerm.textContent = fermColTd + ` шт`;
   spanFermCount.textContent = sectionCol + sectionHintText;
   tdMFerm.textContent = pipeLen + ` м`;
@@ -59,7 +58,7 @@ export const getFermCount = (length, fermLen, columnStep) => {
   const oneRosCalcs = addTenPercent((((fermLen * 2) * 2) * 2), 1);
   tdMRos.textContent = `${oneRosCalcs} м`;
 
-  const totalRosCalcs = (oneRosCalcs * fermCol).toFixed(1);
+  const totalRosCalcs = (oneRosCalcs * fermColTd).toFixed(1);
   tdMTotalRos.textContent = `${totalRosCalcs} м`;
 
   tdPcsTotalRos.textContent = '---';

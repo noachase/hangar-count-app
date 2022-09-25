@@ -11,6 +11,7 @@ const {
   spanHangarWidth,
   spanHangarLength,
   spanHangarHeight,
+  spanHangarColumnStep,
   gatesResult,
   stepResult,
   inputForm,
@@ -58,6 +59,7 @@ const control = () => {
     spanHangarWidth.textContent = `${width} м`;
     spanHangarLength.textContent = `${length} м`;
     spanHangarHeight.textContent = `${height} м`;
+    spanHangarColumnStep.textContent = `${columnStep} м`;
     init(height, width, fermLen, length, columnStep, gatesQuantity);
   });
 
