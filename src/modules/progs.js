@@ -4,8 +4,8 @@ const {
   tdMProgWalls,
   tdPcsProgFront,
   tdMProgFront,
-  tdPcsProgCeiling,
-  tdMProgCeiling,
+  tdPcsProgRoof,
+  tdMProgRoof,
 } = selectors;
 
 // прогоны
@@ -33,7 +33,7 @@ export const getProgWallsCount = (length, height, width) => {
   tdMProgWalls.textContent = totalProgPipeLength + ` м`;
 };
 
-export const getProgCeilingCount = (length, fermLen) => {
+export const getProgRoofCount = (length, fermLen) => {
   const ceilingProgSectionCount = Math.ceil(fermLen / 1.3);
   const ceilingProgHeightRemainder = fermLen % 1.29;
 
@@ -41,10 +41,10 @@ export const getProgCeilingCount = (length, fermLen) => {
 
   if (ceilingProgHeightRemainder === 0 || ceilingProgHeightRemainder <= 1.29) {
     innerPcsCeil = (ceilingProgSectionCount + 1) * 2 + ` шт`;
-    tdPcsProgCeiling.textContent = innerPcsCeil;
+    tdPcsProgRoof.textContent = innerPcsCeil;
   }
 
-  const totalCeilingProgPipeLength = +innerPcsCeil.split(' ')[0] * 2 * length;
+  const totalRoofProgPipeLength = +innerPcsCeil.split(' ')[0] * 2 * length;
 
-  tdMProgCeiling.textContent = totalCeilingProgPipeLength + ` м`;
+  tdMProgRoof.textContent = totalRoofProgPipeLength + ` м`;
 };

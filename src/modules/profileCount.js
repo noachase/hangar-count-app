@@ -3,7 +3,7 @@ import selectors from './selectors.js';
 const {
   profileWalls,
   profileFront,
-  profileCeiling,
+  profileRoof,
 } = selectors;
 
 export const getProfileCount = (height, width, length) => {
@@ -13,9 +13,10 @@ export const getProfileCount = (height, width, length) => {
 
   const profileWallsCalcs = height * length;
   const profileFrontCalcs = (triangleArea * 2) + (height * width);
-  const profileCeilingCalcs = (triangleGypotenuse * length) * 2;
+  const halfOfRoofArea = triangleGypotenuse * length + 0.7 * length; // 0.7 это добавленная длина на скат крыши
+  const profileRoofCalcs = (halfOfRoofArea) * 2;
 
   profileWalls.textContent = `${profileWallsCalcs} м`;
   profileFront.textContent = `${profileFrontCalcs} м`;
-  profileCeiling.textContent = `${profileCeilingCalcs} м`;
+  profileRoof.textContent = `${profileRoofCalcs} м`;
 };
