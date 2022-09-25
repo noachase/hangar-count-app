@@ -4,6 +4,7 @@ const spanFermCount = document.querySelector('.res-ferm-count');
 const spanHangarWidth = document.querySelector('.res-hangar-width');
 const spanHangarLength = document.querySelector('.res-hangar-length');
 const spanHangarHeight = document.querySelector('.res-hangar-height');
+const spanHangarColumnStep = document.querySelector('.res-hangar-column-step');
 const spanPipeCount = document.querySelector('.res-ferm-pipe-count');
 const spanPipeSnakeCount = document.querySelector('.res-ferm-snake-pipe-count');
 // const spanPillarsFrontonCount = document.querySelector('.pillars-fronton-count');
@@ -114,4 +115,5 @@ export default {
   profileCeiling,
   tdPcsTotalRos,
   tdMTotalRos,
+  spanHangarColumnStep,
 };

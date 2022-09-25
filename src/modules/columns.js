@@ -25,7 +25,8 @@ export const getColumnCount = (length, height, width, columnStep) => {
   const frontonPillarsLength = frontonPillarsCount * 7; // 1 столб торцевой = 7м
   const sectionCountStd = Math.ceil(length / columnStep);
   const lengthRemainder = length % columnStep;
-  let innerPcs, innerM = null;
+  let innerPcs = null;
+  let innerM = null;
 
   if (lengthRemainder === 0) {
     innerPcs = (sectionCountStd + 1) * 2;
