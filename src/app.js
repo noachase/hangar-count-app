@@ -1,7 +1,7 @@
 import './modules/selects.js';
 import { getColumnCount } from './modules/columns.js';
 import { getFermLength, getFermCount, getArea } from './modules/hangarSizing.js';
-import { getProgWallsCount, getProgCeilingCount } from './modules/progs.js';
+import { getProgWallsCount, getProgRoofCount } from './modules/progs.js';
 import { getStrengtheningConstructionCount } from './modules/straighteningConsturctions.js';
 import { validateFunction } from './modules/validations.js';
 import { gatesCalcs } from './modules/gatesCalcs.js';
@@ -26,7 +26,7 @@ const init = (height, width, fermLen, length, columnStep, gatesQuantity) => {
   getStrengtheningConstructionCount(height, length);
   getColumnCount(length, height, width, columnStep);
   getProgWallsCount(length, height, width);
-  getProgCeilingCount(length, fermLen);
+  getProgRoofCount(length, fermLen);
   getFermCount(length, fermLen, columnStep);
   gatesCalcs(gatesQuantity);
   getProfileCount(height, width, length);

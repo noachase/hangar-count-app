@@ -22,8 +22,8 @@ const tdMProgWalls = document.querySelector('.td-m-joists-walls');
 const tdPcsProgFront = document.querySelector('.td-pcs-joists-front'); // прогоны торцевые
 const tdMProgFront = document.querySelector('.td-m-joists-front');
 
-const tdPcsProgCeiling = document.querySelector('.td-pcs-joists-ceiling'); // прогоны крыша
-const tdMProgCeiling = document.querySelector('.td-m-joists-ceiling');
+const tdPcsProgRoof = document.querySelector('.td-pcs-joists-ceiling'); // прогоны крыша
+const tdMProgRoof = document.querySelector('.td-m-joists-ceiling');
 
 const tdPcsFerm = document.querySelector('.td-pcs-girders'); // фермы
 const tdMFerm = document.querySelector('.td-m-girders');
@@ -51,7 +51,7 @@ const inputHeight = document.getElementById('floatHeight');
 
 const profileWalls = document.querySelector('.td-pcs-profile-walls');
 const profileFront = document.querySelector('.td-pcs-profile-front');
-const profileCeiling = document.querySelector('.td-pcs-profile-ceiling');
+const profileRoof = document.querySelector('.td-pcs-profile-ceiling');
 
 // Всё для селектов
 
@@ -86,8 +86,8 @@ export default {
   tdMProgWalls,
   tdPcsProgFront,
   tdMProgFront,
-  tdPcsProgCeiling,
-  tdMProgCeiling,
+  tdPcsProgRoof,
+  tdMProgRoof,
   tdPcsFerm,
   tdMFerm,
   tdPcsRos,
@@ -112,7 +112,7 @@ export default {
   requiredInputs,
   profileWalls,
   profileFront,
-  profileCeiling,
+  profileRoof,
   tdPcsTotalRos,
   tdMTotalRos,
   spanHangarColumnStep,
